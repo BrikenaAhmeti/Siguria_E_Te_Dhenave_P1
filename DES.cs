@@ -261,3 +261,13 @@ namespace DESready
                 ++q;
             }
         }
+
+        private void PBoxPermutacioni(int[] SBoxHPT, int[] PBoxHPT)
+        {
+            int temp;
+            for (int i = 0; i < 32; i++)
+            {
+                temp = pbox[i];
+                PBoxHPT[i] = SBoxHPT[temp - 1];
+            }
+        }
