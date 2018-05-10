@@ -378,3 +378,15 @@ namespace DESready
 
             return ciphertext;
         }
+
+        private void RaundiRevers()
+        {
+            for (int i = 0; i < 1; i++)
+            {
+                RuajtjaBllokutDjatht(cbMajtas, pbMtemp);
+
+                Kompresimi();
+
+                Zgjerimi(cbMajtas, cbMzgj);
+
+                XORoperacioni(celesiComp, cbMzgj, pMxor, 48);
