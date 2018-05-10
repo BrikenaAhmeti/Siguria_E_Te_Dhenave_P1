@@ -94,6 +94,7 @@ namespace DESready
         int[] pbMtemp = new int[32];
         int[] celesiComp = new int[48];
         int[] cbMzgj = new int[48];
+
         int[] pbDzgj = new int[48];
         int[] pDxor = new int[48];
         int[] pMxor = new int[48];
@@ -158,5 +159,15 @@ namespace DESready
                 if ((i + 1) % 8 == 0)
                     continue;
                 celesi56[j++] = celesi[i];
+            }
+        }
+
+        private void permutacioniFillestar(int[] sentarray, int[] savedarray)
+        {
+            int tmp;
+            for (int i = 0; i < 64; i++)
+            {
+                tmp = pf[i];
+                savedarray[i] = sentarray[tmp - 1];
             }
         }
