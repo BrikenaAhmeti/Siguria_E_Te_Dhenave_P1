@@ -1,3 +1,4 @@
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,3 +31,17 @@ namespace DESready
 
             return bitarray;
         }
+
+        public static int ToDecimal(int[] bitsarray)
+        {
+            string stringvalue = "";
+            for (int i = 0; i < bitsarray.Length; i++)
+            {
+                stringvalue += bitsarray[i].ToString();
+            }
+            int DecimalValue = Convert.ToInt32(stringvalue, 2);
+
+            return DecimalValue;
+        }
+    }
+}
