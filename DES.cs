@@ -422,3 +422,13 @@ namespace DESready
             cipherchar = ciphertext.ToCharArray();
             celesichar = key.ToCharArray();
             int j, k;
+            
+            int st = TekstNeBita(cipherchar, ciphertexti);
+
+            int fst = ShtoZerot(ciphertexti, st);
+             
+            int sk = TekstNeBita(celesichar, celesi);
+
+            int fsk = ShtoZerot(celesi, sk);
+
+            LargimiBitit8();
