@@ -270,6 +270,7 @@ namespace DESready
             for (int i = 0; i < 32; i++)
             {
                 temp = pbox[i];
+
                 PBoxHPT[i] = SBoxHPT[temp - 1];
             }
         }
@@ -305,7 +306,7 @@ namespace DESready
             }
         }
 
-         private void filloEnkriptimin()
+        private void filloEnkriptimin()
         {
             permutacioniFillestar(plainblloku, pbPerzier);
             ndarjaBllokutNeLPTdheRPT(pbPerzier, pbMajtas, pbDjathtas);
@@ -314,7 +315,7 @@ namespace DESready
             permutacioniPerfundimtar(pbKomplet, pbFp);
         }
 
-         private string BitatNeTekst(int[] sentarray, int len)
+        private string BitatNeTekst(int[] sentarray, int len)
         {
             string finaltext = "";
             int j, k, decimalvalue;
@@ -336,4 +337,44 @@ namespace DESready
             }
 
             return finaltext;
+        }
+
+        public string Enkripto(string plaintext, string key)
+        {
+            string ciphertext = null;
+
+            plainchar = plaintext.ToCharArray();
+            celesichar = key.ToCharArray();
+            int j, k;
+
+          
+            int st = TekstNeBita(plainchar, plaintexti);//st eshte gjatesia e plaintekstit ne bita
+
+            int fst = ShtoZerot(plaintexti, st);//fst eshte gjatesia e plaintekstit pasi ti shtohen zerot
+
+          
+            int sk = TekstNeBita(celesichar, celesi);
+
+            int fsk = ShtoZerot(celesi, sk);
+
+            LargimiBitit8();
+
+            for (int i = 0; i < fst; i += 64)
+            {
+                for (k = 0, j = i; j < (i + 64); ++j, ++k)
+                {
+                    plainblloku[k] = plaintexti[j];
+                }
+
+                filloEnkriptimin();
+
+                for (k = 0, j = i; j < (i + 64); ++j, ++k)
+                {
+                    ciphertexti[j] = pbFp[k];
+                }
+            }
+
+            ciphertext = BitatNeTekst(ciphertexti, fst);
+
+            return ciphertext;
         }
