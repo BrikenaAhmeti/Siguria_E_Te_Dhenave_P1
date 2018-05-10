@@ -303,3 +303,11 @@ namespace DESready
                 toPT[i] = fromPT[temp - 1];
             }
         }
+
+         private void filloEnkriptimin()
+        {
+            permutacioniFillestar(plainblloku, pbPerzier);
+
+            ndarjaBllokutNeLPTdheRPT(pbPerzier, pbMajtas, pbDjathtas);
+
+            Round();
