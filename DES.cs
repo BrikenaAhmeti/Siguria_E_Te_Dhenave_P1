@@ -116,6 +116,8 @@ namespace DESready
             private int GetASCII(char ch)
             {
                 int n = ch;
+
+                
                 return n;
             }
 
@@ -169,5 +171,26 @@ namespace DESready
             {
                 tmp = pf[i];
                 savedarray[i] = sentarray[tmp - 1];
+            }
+        }
+
+        private void ndarjaBllokutNeLPTdheRPT(int[] sentarray, int[] savedLPT, int[] savedRPT)
+        {
+            for (int i = 0, k = 0; i < 32; i++, ++k)
+            {
+                savedLPT[k] = sentarray[i];
+            }
+
+            for (int i = 32, k = 0; i < 64; i++, ++k)
+            {
+                savedRPT[k] = sentarray[i];
+            }
+        }
+
+        private void RuajtjaBllokutDjatht(int[] fromHPT, int[] toHPT)
+        {
+            for (int i = 0; i < 32; i++)
+            {
+                toHPT[i] = fromHPT[i];
             }
         }
