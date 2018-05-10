@@ -363,6 +363,7 @@ namespace DESready
             {
                 for (k = 0, j = i; j < (i + 64); ++j, ++k)
                 {
+
                     plainblloku[k] = plaintexti[j];
                 }
 
@@ -413,3 +414,11 @@ namespace DESready
 
             permutacioniPerfundimtar(cbKomplet, cbFp);
         }
+
+        public string Dekriptimi(string ciphertext, string key)
+        {
+            string plaintext = null;
+
+            cipherchar = ciphertext.ToCharArray();
+            celesichar = key.ToCharArray();
+            int j, k;
