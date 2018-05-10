@@ -313,3 +313,27 @@ namespace DESready
             Bashkimi(pbMajtas, pbDjathtas, pbKomplet);
             permutacioniPerfundimtar(pbKomplet, pbFp);
         }
+
+         private string BitatNeTekst(int[] sentarray, int len)
+        {
+            string finaltext = "";
+            int j, k, decimalvalue;
+            int[] tempbitarray = new int[8];
+
+            for (int i = 0; i < len; i += 8)
+            {
+                for (k = 0, j = i; j < (i + 8); ++k, ++j)
+                {
+                    tempbitarray[k] = sentarray[j];
+                }
+
+                decimalvalue = BitArray.ToDecimal(tempbitarray);
+
+                if (decimalvalue == 0)
+                    break;
+
+                finaltext += (char)decimalvalue;
+            }
+
+            return finaltext;
+        }
