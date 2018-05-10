@@ -234,7 +234,7 @@ namespace DESready
             }
         }
 
-        private void NdarjaSBox(int[] XoredHPT, int[] SBoxHPT)
+            private void NdarjaSBox(int[] XoredHPT, int[] SBoxHPT)
         {
             int r, t, j = 0, q = 0;
             for (int i = 0; i < 48; i += 6)
@@ -291,5 +291,15 @@ namespace DESready
             for (int i = 0; i < 32; i++)
             {
                 pbKomplet[j++] = savedRPT[i];
+            }
+        }
+
+         private void permutacioniPerfundimtar(int[] fromPT, int[] toPT)
+        {
+            int temp;
+            for (int i = 0; i < 64; i++)
+            {
+                temp = fp[i];
+                toPT[i] = fromPT[temp - 1];
             }
         }
