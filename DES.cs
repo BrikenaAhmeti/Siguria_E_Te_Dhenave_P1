@@ -447,3 +447,9 @@ namespace DESready
                     plaintexti[j] = cbFp[k];
                 }
             }
+            plaintext = BitatNeTekst(plaintexti, fst);
+
+            return plaintext;
+        }
+    }
+}
