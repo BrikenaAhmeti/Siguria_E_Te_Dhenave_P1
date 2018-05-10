@@ -166,6 +166,7 @@ namespace DESready
         private void permutacioniFillestar(int[] sentarray, int[] savedarray)
         {
             int tmp;
+            
             for (int i = 0; i < 64; i++)
             {
                 tmp = pf[i];
@@ -243,7 +244,6 @@ namespace DESready
                 rreshti[1] = XoredHPT[i + 5];
                 rreshtiindex = BitArray.ToDecimal(rreshti);
 
-
                 kolona[0] = XoredHPT[i + 1];
                 kolona[1] = XoredHPT[i + 2];
                 kolona[2] = XoredHPT[i + 3];
@@ -267,6 +267,7 @@ namespace DESready
         private void PBoxPermutacioni(int[] SBoxHPT, int[] PBoxHPT)
         {
             int temp;
+            
             for (int i = 0; i < 32; i++)
             {
                 temp = pbox[i];
@@ -286,6 +287,7 @@ namespace DESready
          private void Bashkimi(int[] savedLPT, int[] savedRPT, int[] pbKomplet)
         {
             int j = 0;
+             
             for (int i = 0; i < 32; i++)
             {
                 pbKomplet[j++] = savedLPT[i];
@@ -299,6 +301,7 @@ namespace DESready
          private void permutacioniPerfundimtar(int[] fromPT, int[] toPT)
         {
             int temp;
+             
             for (int i = 0; i < 64; i++)
             {
                 temp = fp[i];
@@ -309,9 +312,13 @@ namespace DESready
         private void filloEnkriptimin()
         {
             permutacioniFillestar(plainblloku, pbPerzier);
+            
             ndarjaBllokutNeLPTdheRPT(pbPerzier, pbMajtas, pbDjathtas);
+            
             Round();
+            
             Bashkimi(pbMajtas, pbDjathtas, pbKomplet);
+            
             permutacioniPerfundimtar(pbKomplet, pbFp);
         }
 
@@ -344,10 +351,11 @@ namespace DESready
             string ciphertext = null;
 
             plainchar = plaintext.ToCharArray();
+            
             celesichar = key.ToCharArray();
+            
             int j, k;
 
-          
             int st = TekstNeBita(plainchar, plaintexti);//st eshte gjatesia e plaintekstit ne bita
 
             int fst = ShtoZerot(plaintexti, st);//fst eshte gjatesia e plaintekstit pasi ti shtohen zerot
