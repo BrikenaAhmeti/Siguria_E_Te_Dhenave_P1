@@ -243,6 +243,7 @@ namespace DESready
                 rreshti[1] = XoredHPT[i + 5];
                 rreshtiindex = BitArray.ToDecimal(rreshti);
 
+
                 kolona[0] = XoredHPT[i + 1];
                 kolona[1] = XoredHPT[i + 2];
                 kolona[2] = XoredHPT[i + 3];
@@ -307,7 +308,8 @@ namespace DESready
          private void filloEnkriptimin()
         {
             permutacioniFillestar(plainblloku, pbPerzier);
-
             ndarjaBllokutNeLPTdheRPT(pbPerzier, pbMajtas, pbDjathtas);
-
             Round();
+            Bashkimi(pbMajtas, pbDjathtas, pbKomplet);
+            permutacioniPerfundimtar(pbKomplet, pbFp);
+        }
