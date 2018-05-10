@@ -42,3 +42,10 @@ private void label4_Click(object sender, EventArgs e)
                 txtKey.Focus();
             }
         }
+        
+        private void btnDec_Click_1(object sender, EventArgs e)
+        {
+            txtDec.Text = des.Dekriptimi(txtCipher.Text, txtKey.Text);
+        }
+    }
+}
