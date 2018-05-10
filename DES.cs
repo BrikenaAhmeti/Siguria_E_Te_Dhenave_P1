@@ -219,6 +219,8 @@ namespace DESready
         private void XORoperacioni(int[] array1, int[] array2, int[] array3, int SizeOfTheArray)
         {
             for (int i = 0; i < SizeOfTheArray; i++)
+
+            
             {
                 array3[i] = array1[i] ^ array2[i];
             }
@@ -269,5 +271,13 @@ namespace DESready
             {
                 temp = pbox[i];
                 PBoxHPT[i] = SBoxHPT[temp - 1];
+            }
+        }
+
+        private void Shkembimi(int[] tempHPT, int[] HPT)
+        {
+            for (int i = 0; i < 32; i++)
+            {
+                HPT[i] = tempHPT[i];
             }
         }
