@@ -222,6 +222,7 @@ namespace DESready
 
             
             {
+
                 array3[i] = array1[i] ^ array2[i];
             }
         }
@@ -281,3 +282,11 @@ namespace DESready
                 HPT[i] = tempHPT[i];
             }
         }
+
+         private void Bashkimi(int[] savedLPT, int[] savedRPT, int[] pbKomplet)
+        {
+            int j = 0;
+            for (int i = 0; i < 32; i++)
+            {
+                pbKomplet[j++] = savedLPT[i];
+            }
