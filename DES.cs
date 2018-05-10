@@ -162,6 +162,7 @@ namespace DESready
                     continue;
                 celesi56[j++] = celesi[i];
             }
+
         }
 
         private void permutacioniFillestar(int[] sentarray, int[] savedarray)
@@ -220,5 +221,43 @@ namespace DESready
             for (int i = 0; i < SizeOfTheArray; i++)
             {
                 array3[i] = array1[i] ^ array2[i];
+            }
+        }
+
+        private void PerzgjedhjaSBOX(int[] temparray, int[] SBoxHPTArray, int fromIndex)
+        {
+            int j = fromIndex;
+            for (int i = 0; i < 4; i++)
+            {
+                SBoxHPTArray[j++] = arrSboxTemp[i];
+            }
+        }
+
+        private void NdarjaSBox(int[] XoredHPT, int[] SBoxHPT)
+        {
+            int r, t, j = 0, q = 0;
+            for (int i = 0; i < 48; i += 6)
+            {
+                rreshti[0] = XoredHPT[i];
+                rreshti[1] = XoredHPT[i + 5];
+                rreshtiindex = BitArray.ToDecimal(rreshti);
+
+                kolona[0] = XoredHPT[i + 1];
+                kolona[1] = XoredHPT[i + 2];
+                kolona[2] = XoredHPT[i + 3];
+                kolona[3] = XoredHPT[i + 4];
+                kolonaindex = BitArray.ToDecimal(kolona);
+
+                t = ((16 * (rreshtiindex)) + (kolonaindex));
+
+                sboxvlera = sbox[j++, t];
+
+                arrSboxTemp = BitArray.ToBits(sboxvlera, 4);
+
+                r = q * 4;
+
+                PerzgjedhjaSBOX(arrSboxTemp, SBoxHPT, r);
+
+                ++q;
             }
         }
