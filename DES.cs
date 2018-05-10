@@ -214,3 +214,11 @@ namespace DESready
                 ExpandedHPT[i] = HPT[temp - 1];
             }
         }
+        
+        private void XORoperacioni(int[] array1, int[] array2, int[] array3, int SizeOfTheArray)
+        {
+            for (int i = 0; i < SizeOfTheArray; i++)
+            {
+                array3[i] = array1[i] ^ array2[i];
+            }
+        }
