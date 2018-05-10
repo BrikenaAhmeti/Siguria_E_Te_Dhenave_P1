@@ -1,5 +1,3 @@
-
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -290,3 +288,8 @@ namespace DESready
             {
                 pbKomplet[j++] = savedLPT[i];
             }
+            for (int i = 0; i < 32; i++)
+            {
+                pbKomplet[j++] = savedRPT[i];
+            }
+        }
