@@ -390,3 +390,13 @@ namespace DESready
                 Zgjerimi(cbMajtas, cbMzgj);
 
                 XORoperacioni(celesiComp, cbMzgj, pMxor, 48);
+                
+                NdarjaSBox(pMxor, cbMsbox);
+
+                PBoxPermutacioni(cbMsbox, cbMpbox);
+
+                XORoperacioni(cbMpbox, cbDjathtas, cbMajtas, 32);
+
+                Shkembimi(pbMtemp, cbDjathtas);
+            }
+        }
