@@ -137,3 +137,26 @@ namespace DESready
                 for (x = 0, y = fromIndex; x < array1.Length; ++x, ++y)
                     array2[y] = array1[x];
             }
+
+         private int ShtoZerot(int[] appendedarray, int len)
+        {
+            int zeroes;
+            if (len % 64 != 0)
+            {
+                zeroes = (64 - (len % 64));
+
+                for (int i = 0; i < zeroes; ++i)
+                    appendedarray[len++] = 0;
+            }
+            return len;
+        }
+
+        private void LargimiBitit8()
+        {
+            for (int i = 0, j = 0; i < 64; i++)
+            {
+                if ((i + 1) % 8 == 0)
+                    continue;
+                celesi56[j++] = celesi[i];
+            }
+        }
