@@ -43,6 +43,7 @@ namespace DESready
                                                 13,7,0,9,3,4,6,10,2,8,5,14,12,11,15,1,
                                                 13,6,4,9,8,15,3,0,11,1,2,12,5,10,14,7,
                                                 1,10,13,0,6,9,8,7,4,15,14,3,11,5,2,12 },
+
                                               { 7,13,14,3,0,6,9,10,1,2,8,5,11,12,4,15,
                                                 13,8,11,5,6,15,0,3,4,7,2,12,1,10,14,9,
                                                 10,6,9,0,12,11,7,13,15,1,3,14,5,2,8,4,
@@ -110,3 +111,29 @@ namespace DESready
         int[] cbKomplet = new int[64];
         int[] pbFp = new int[64];
         int[] cbFp = new int[64];
+
+            private int GetASCII(char ch)
+            {
+                int n = ch;
+                return n;
+            }
+
+            private int TekstNeBita(char[] chararray, int[] savedarray)
+            {
+                int j = 0;
+                for (int i = 0; i < chararray.Length; ++i)
+                {
+                    int[] ba = BitArray.ToBits(GetASCII(chararray[i]), 8);
+                    j = i * 8;
+                    vargu1TeVarguB(ba, savedarray, j);
+                }
+
+                return (j + 8);
+            }
+
+            private void vargu1TeVarguB(int[] array1, int[] array2, int fromIndex)
+            {
+                int x, y;
+                for (x = 0, y = fromIndex; x < array1.Length; ++x, ++y)
+                    array2[y] = array1[x];
+            }
