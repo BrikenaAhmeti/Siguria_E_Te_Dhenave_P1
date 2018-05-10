@@ -432,3 +432,18 @@ namespace DESready
             int fsk = ShtoZerot(celesi, sk);
 
             LargimiBitit8();
+            
+            for (int i = 0; i < fst; i += 64)
+            {
+                for (k = 0, j = i; j < (i + 64); ++j, ++k)
+                {
+                    cipherblloku[k] = ciphertexti[j];
+                }
+
+                FilloDekriptimin();
+
+                for (k = 0, j = i; j < (i + 64); ++j, ++k)
+                {
+                    plaintexti[j] = cbFp[k];
+                }
+            }
