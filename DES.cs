@@ -194,3 +194,23 @@ namespace DESready
                 toHPT[i] = fromHPT[i];
             }
         }
+        
+        private void Kompresimi()
+        {
+            int temp;
+            for (int i = 0; i < 48; i++)
+            {
+                temp = komp[i];
+                celesiComp[i] = celesi56[temp - 1];
+            }
+        }
+
+        private void Zgjerimi(int[] HPT, int[] ExpandedHPT)
+        {
+            int temp;
+            for (int i = 0; i < 48; i++)
+            {
+                temp = zgj[i];
+                ExpandedHPT[i] = HPT[temp - 1];
+            }
+        }
