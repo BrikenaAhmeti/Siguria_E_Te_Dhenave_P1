@@ -400,3 +400,16 @@ namespace DESready
                 Shkembimi(pbMtemp, cbDjathtas);
             }
         }
+
+        private void FilloDekriptimin()
+        {
+            permutacioniFillestar(cipherblloku, cbPerzier);
+
+            ndarjaBllokutNeLPTdheRPT(cbPerzier, cbMajtas, cbDjathtas);
+
+            RaundiRevers();
+
+            Bashkimi(cbMajtas, cbDjathtas, cbKomplet);
+
+            permutacioniPerfundimtar(cbKomplet, cbFp);
+        }
