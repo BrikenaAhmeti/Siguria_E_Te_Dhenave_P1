@@ -283,7 +283,27 @@ namespace DESready
                 HPT[i] = tempHPT[i];
             }
         }
+        private void Round()
+        {
+            for (int i = 0; i < 1; i++)              
+            {
+                RuajtjaBllokutDjatht(pbDjathtas, pbDtemp);     
 
+                Kompresimi();
+
+                Zgjerimi(pbDjathtas, pbDzgj);
+
+                XORoperacioni(celesiComp, pbDzgj, pDxor, 48);
+
+                NdarjaSBox(pDxor, pbDsbox);
+
+                PBoxPermutacioni(pbDsbox, pbDpbox);
+
+                XORoperacioni(pbDpbox, pbMajtas, pbDjathtas, 32);
+
+                Shkembimi(pbDtemp, pbMajtas);
+            }
+        }
          private void Bashkimi(int[] savedLPT, int[] savedRPT, int[] pbKomplet)
         {
             int j = 0;
